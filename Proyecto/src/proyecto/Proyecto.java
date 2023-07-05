@@ -4,22 +4,27 @@
  */
 package proyecto;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author feru0
  */
 public class Proyecto {
-//Holis
-//hkjhfkjhfkjhfkjhfkjhgkjhg
-    /**
-     * @param args the command line arguments
-     */
+
+
     public static void main(String[] args) {
-        System.out.println("hola");
-        System.out.println("hola mundo");
-        System.out.println("hola fer");
-        System.out.println("dice");
-        System.out.println("si");
+        
+
+
+        String botones[] = {"RESTAURANTE", "ORDENES", "MENU", "REPORTES", "SALIR"};
+
+        int boton = JOptionPane.showOptionDialog(null, "-----BIENVENIDO A DELICIAS DEL MAR PROFUNDO-----", "OPCIONES?", JOptionPane.DEFAULT_OPTION,
+                JOptionPane.QUESTION_MESSAGE,
+                null, botones, "RESTAURANTE");
+
+        
+        
     }
     
 }
