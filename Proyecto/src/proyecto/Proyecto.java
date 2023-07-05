@@ -18,6 +18,7 @@ public class Proyecto {
         System.out.println("hola");
         System.out.println("hola mundo");
         System.out.println("hola fer");
+        System.out.println("dice");
     }
     
 }
