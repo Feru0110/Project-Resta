@@ -10,15 +10,15 @@ import javax.swing.JOptionPane;
  *
  * @author feru0
  */
-public class Orden {
+public class Datos_Orden {
     
     
-     private String ID;
+     public int ID;
      private String nombre ; 
      private int numMesa;
      
      
-     public Orden(String ID , String nombre , int numMesa){
+     public Datos_Orden(int ID , String nombre , int numMesa){
          
          
          this.ID = ID;
@@ -26,17 +26,24 @@ public class Orden {
          this.numMesa= numMesa;
          
      }
-
-    public String getID() {
+    public Datos_Orden(){
+        this.ID=200;
+    }
+    public int getID() {
         return ID;
     }
 
-    public void setID(String ID) {
-        this.ID = ID;
+    public void setID(int ID) {
+        this.ID=ID;
     }
 
     public String getNombre() {
         return nombre;
+    }
+    public int generarID(){
+        ID++;
+        int newID=ID;
+        return newID;
     }
 
     public void setNombre(String nombre) {

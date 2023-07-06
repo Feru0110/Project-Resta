@@ -12,44 +12,36 @@ import javax.swing.JOptionPane;
  */
 public class Proyecto {
 
-
     public static void main(String[] args) {
-        
-        
-        //fer
-        // lo primero que tiene que aparecer en el programa 
-        String botonesPrincipal[] = {"RESTAURANTE", "ORDENES", "MENU", "REPORTES", "SALIR"};
+        int opcionSeleccionada = Menu_Principal.menuPrincipal();
+        while (opcionSeleccionada != 3) {
+            switch (opcionSeleccionada) {
+                case 1://Orden
+                    String botonesOrden[] = {"ABRIR ORDEN", "AGREGAR PLATILLO A LA ORDEN", "CERRRAR ORDEN", "SALIR"};
+                    int menuOrden = JOptionPane.showOptionDialog(null, "--MENU DE ORDENES---", "OPCIONES?", JOptionPane.DEFAULT_OPTION,
+                            JOptionPane.QUESTION_MESSAGE,
+                            null, botonesOrden, "ABRIR ORDEN");
+                    switch (menuOrden) {
+                        case 0://ABRIR ORDEN
+                            Datos_Orden orden = new Datos_Orden();
+                            int newID=orden.generarID();
+                            System.out.println("el numero de orden es: "+ orden.getID());
+                            opcionSeleccionada = Menu_Principal.menuPrincipal();    
+                        case 1://AGREGAR PLATILLO A LA ORDEN
+                        case 2://CERRRAR ORDEN
+                        case 3://SALIR
+                            opcionSeleccionada = Menu_Principal.menuPrincipal();
 
-        int botonPrincipal = JOptionPane.showOptionDialog(null, "-----BIENVENIDO A DELICIAS DEL MAR PROFUNDO-----", "OPCIONES?", JOptionPane.DEFAULT_OPTION,
-                JOptionPane.QUESTION_MESSAGE,
-                null, botonesPrincipal, "RESTAURANTE");
+                    }
 
-        
-        
-        
-        
-        
-        
-        
-        //fer
-       // menu de la clase orden  
-        int menu;
-        menu = Integer.parseInt(JOptionPane.showInputDialog("-----MENU DE ORDENES-----\n"
-                    + "1 - ABRIR ORDEN\n"
-                    + "2- AGREGAR PLATILLO A LA ORDEN\n"
-                    + "3- CERRAR ORDEN\n"
-                    + "4- SALIR\n"));
-                    
-        
-        //fer
-       // esto es de la orden  
-         String botonesOrden[] = {"AGREGAR OTRO NUMERO", "CANCELAR"};
-
-        int botonOrden = JOptionPane.showOptionDialog(null, "-----ERROR DE NUMERO DE-----", "QUE DESEA?", JOptionPane.DEFAULT_OPTION,
-                JOptionPane.QUESTION_MESSAGE,
-                null, botonesOrden, "CANCELAR");
-        
-        
+            }
+        }
     }
-    
+
+    String botonesOrden[] = {"AGREGAR OTRO NUMERO", "CANCELAR"};
+
+    int botonOrden = JOptionPane.showOptionDialog(null, "-----ERROR DE NUMERO DE-----", "QUE DESEA?", JOptionPane.DEFAULT_OPTION,
+            JOptionPane.QUESTION_MESSAGE,
+            null, botonesOrden, "CANCELAR");
+
 }
