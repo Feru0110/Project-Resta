@@ -5,6 +5,7 @@
 package proyecto;
 
 import javax.swing.JOptionPane;
+import java.util.Random;
 
 /**
  *
@@ -24,9 +25,9 @@ public class Proyecto {
                     switch (menuOrden) {
                         case 0://ABRIR ORDEN
                             Datos_Orden orden = new Datos_Orden();
-                            int newID=orden.generarID();
-                            System.out.println("el numero de orden es: "+ orden.getID());
-                            opcionSeleccionada = Menu_Principal.menuPrincipal();    
+                            int newID = orden.generarID();
+                            System.out.println("el numero de orden es: " + orden.getID());
+                            opcionSeleccionada = Menu_Principal.menuPrincipal();
                         case 1://AGREGAR PLATILLO A LA ORDEN
                         case 2://CERRRAR ORDEN
                         case 3://SALIR
@@ -37,11 +38,5 @@ public class Proyecto {
             }
         }
     }
-
-    String botonesOrden[] = {"AGREGAR OTRO NUMERO", "CANCELAR"};
-
-    int botonOrden = JOptionPane.showOptionDialog(null, "-----ERROR DE NUMERO DE-----", "QUE DESEA?", JOptionPane.DEFAULT_OPTION,
-            JOptionPane.QUESTION_MESSAGE,
-            null, botonesOrden, "CANCELAR");
 
 }
