@@ -6,6 +6,7 @@ package proyecto;
 
 import javax.swing.JOptionPane;
 import java.util.Random;
+import static proyecto.restaurante.generarRes;
 
 /**
  *
@@ -17,6 +18,11 @@ public class Proyecto {
         int opcionSeleccionada = Menu_Principal.menuPrincipal();
         while (opcionSeleccionada != 3) {
             switch (opcionSeleccionada) {
+                case 0://Restaurante
+                    Datos_Mesa[] mesas= generarRes();
+                    restaurante.mostrarEstadoRes(mesas);
+                    
+                
                 case 1://Orden
                     String botonesOrden[] = {"ABRIR ORDEN", "AGREGAR PLATILLO A LA ORDEN", "CERRRAR ORDEN", "SALIR"};
                     int menuOrden = JOptionPane.showOptionDialog(null, "--MENU DE ORDENES---", "OPCIONES?", JOptionPane.DEFAULT_OPTION,

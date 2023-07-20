@@ -36,4 +36,7 @@ public class Datos_Mesa {
          public Mesero getMesero() {
         return mesero;
     }
+         public void setMesero(Mesero mesero){
+             this.mesero=mesero;
+         }
 }

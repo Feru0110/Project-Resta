@@ -12,11 +12,11 @@ public class Mesero {
     private int idMesero;
     private int[] mesaAsig;
     private String nombre;
-    private int turno;
+    private Turno turno;
     private int propinas;
     private int rating;
     
-    public Mesero(int idMesero, int[] mesaAsig, String nombre, int turno, int propinas, int rating){
+    public Mesero(int idMesero, int[] mesaAsig, String nombre, Turno turno){
         this.idMesero=idMesero;
         this.mesaAsig=mesaAsig;
         this.nombre=nombre;
@@ -32,7 +32,7 @@ public class Mesero {
     public int[] getMesasAsig(){
         return mesaAsig;
     }
-    public int getTurno(){
+    public Turno getTurno(){
         return turno;
     }
     public int getPropinas(){
